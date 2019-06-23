@@ -2,10 +2,11 @@
 This spring boot application calls the Github api internally using Rest Template and then render the json array response by removing undesired fields and keeps the desired fields like url,name,description etc.
 
 ## Basic Software Needed to run the app :
-JDK 1.8 or later
-Maven 3.5.4+
-Git 2.20+
-Docker 18.06.1
+1. JDK 1.8 or later
+2. Maven 3.5.4+
+3. Git 2.20+
+4. Docker 18.06.1
+5. Jenkins with installed plugins like git,maven,pipeline etc.
 
 ## How to run the app :
 1. Install the software mentioned above if not done.
@@ -53,3 +54,8 @@ After all the dependencies are successfully downloaded, check the services outpu
     },
     ...
     ]
+### Jenkins Automated Run
+If someone has Jenkins installed with relevant plugins like git,maven etc. and github credentials being configured, then one can use the **Jenkins pipeline script** mentioned in the root directory to do the following :
+1. Clone the Repository from GITHUB
+2. Build the project and run unit test cases automatically.
+3. Push image to docker registry.
