@@ -27,7 +27,7 @@ This spring boot application calls the Github api internally using Rest Template
 3. Create a docker image by running docker build command from the location where docker file is placed i.e. root directory :
    mvnw install dockerfile:build
 4. Run docker container with below command :
-   docker run -p 8080:8080 -itd demo/demo
+   docker run -p 8080:8080 -itd rachit17/teledemo
 
 After all the dependencies are successfully downloaded, check the services output in postman as mentioned in the scenarios below :
 
@@ -58,4 +58,5 @@ After all the dependencies are successfully downloaded, check the services outpu
 If someone has Jenkins installed with relevant plugins like git,maven etc. and github credentials being configured, then one can use the **Jenkins pipeline script** mentioned in the root directory to do the following :
 1. Clone the Repository from GITHUB
 2. Build the project and run unit test cases automatically.
-3. Push image to docker registry.
+3. Push image to docker hub/registry.
+4. Pull & Run image from docker hub/registry on local
